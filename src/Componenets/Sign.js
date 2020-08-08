@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Sign = () => {
-   return <div>Sign</div>
+const Sign = props => {
+   return <div>{props.birthday}</div>
 }
 
 export default Sign

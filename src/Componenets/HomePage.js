@@ -19,11 +19,13 @@ const HomePage = (props) => {
             <option value='dec'>Dec</option>
         </select>
         <select name='date' onChange={props.handleOnChange}>
-            {Array.from({length: 31}, (v, k) => k+1).map((date, index) => <option name='date' key={index} value={date}>{date}</option>)}
+            {Array.from({length: 31}, (v, k) => k+1).map((date, index) => <option name='date' key={index} value={props.date}>{date}</option>)}
         </select>
-           <input name='year' onChange={props.handleOnChange} name='year' value={props.year} />
+        <select name='year' onChange={props.handleOnChange}>
+            {props.years.map((year, index) => <option key={index} value={props.year}>{year}</option>)}
+        </select>
            <br></br>
-           <button className='ui button' onClick={props.submitBirthday}>Submit Birthday</button>
+           <button className='ui small button' onClick={props.submitBirthday}>Submit Birthday</button>
     </div>
     )
 }
