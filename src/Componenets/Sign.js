@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Sign = props => {
+const Sign = () => {
    return <div>Sign</div>
 }
 
