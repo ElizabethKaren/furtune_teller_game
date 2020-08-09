@@ -1,12 +1,17 @@
 body {
-  background-color: rgb(239, 239, 240);
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(239, 239, 240);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    background-color: rgb(239, 239, 240);
+}
+
+#root{
+background-color: rgb(239, 239, 240);
 }
