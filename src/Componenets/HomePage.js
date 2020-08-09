@@ -13,6 +13,7 @@ const HomePage = (props) => {
                     <div className='fields'>
                         <div className='field'>
                             <select className="ui fluid search dropdown" name='month' onChange={props.handleOnChange}>
+                                <option>Month</option>
                                 <option value='jan'>Jan</option>
                                 <option value='feb'>Feb</option>
                                 <option value='march'>March</option>
@@ -29,11 +30,13 @@ const HomePage = (props) => {
                         </div>
                         <div className='field'>
                             <select className="ui fluid search dropdown" name='day' onChange={props.handleOnChange}>
+                                <option>Day</option>
                                 {Array.from({length: 31}, (v, k) => k+1).map((date, index) => <option name='day' key={index} value={date}>{date}</option>)}
                             </select>
                         </div>
                         <div className='field'>
                             <select className="ui fluid search dropdown" name='year' onChange={props.handleOnChange}>
+                                    <option>Year</option>
                                     {props.years.map((year, index) => <option key={index} value={props.year}>{year}</option>)}
                             </select>
                         </div>

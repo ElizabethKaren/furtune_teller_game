@@ -54,13 +54,94 @@ export class App extends Component{
   }
 
   findSign = (month, day) => {
-    if (month === 'sept' && day < 24){
-      this.setState({ sign: 'Virgo' })
-    } else if (month == 'feb' && day < 20){
-      this.setState({ sign: 'Aquarius' })
-    } else if (month == 'jan' && day < 16){
-      this.setState({ sign: 'Capricorn'})
+    let sign = ''
+    switch(month){
+      case 'jan':
+        if (day < 21){
+          sign = 'Capricorn'
+        } else {
+          sign = 'Aquarius'
+        }
+        break;
+      case 'feb':
+        if (day < 20){
+          sign = 'Aquarius'
+        } else {
+          sign = 'Pisces'
+        }
+        break;
+      case 'march':
+        if (day < 22){
+          sign = 'Pisces'
+        } else {
+          sign = 'Aries'
+        }
+        break;
+      case 'april':
+        if (day < 21){
+          sign = 'Aries'
+        } else {
+          sign = 'Taurus'
+        }
+        break;
+      case 'may':
+        if (day < 22){
+          sign = 'Taurus'
+        } else {
+          sign = 'Gemini'
+        }
+        break;
+      case 'june':
+        if (day < 22){
+          sign = 'Gemini'
+        } else {
+          sign = 'Cancer'
+        }
+        break;
+      case 'july':
+        if (day < 24){
+          sign = 'Cancer'
+        } else {
+          sign = 'Leo'
+        }
+        break;
+      case 'aug':
+        if (day < 24){
+          sign = 'Leo'
+        } else {
+          sign = 'Virgo'
+        }
+        break;
+      case 'sept':
+        if (day < 24){
+          sign = 'Virgo'
+        } else {
+          sign = 'Libra'
+        }
+        break;
+      case 'oct':
+        if (day < 24){
+          sign = 'Libra'
+        } else {
+          sign = 'Scorpio'
+        }
+        break;
+      case 'nov':
+        if (day < 23){
+          sign = 'Scorpio'
+        } else {
+          sign = 'Sagittarius'
+        }
+        break;
+      case 'dec':
+        if (day < 23){
+          sign = 'Sagittarius'
+        } else {
+          sign = 'Capricorn'
+        }
+        break;
     }
+    this.setState({ sign: sign })
   }
 
   render(){
@@ -74,6 +155,7 @@ export class App extends Component{
         <Route path='/sign' render={()=> <Sign birthday={this.state.birthday}/>}/>
         <Route path='/' render={()=> <HomePage sign={mySign} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday} handleOnChange={this.handleOnChange}/> } />
       </Switch>
+      <br></br>
       <br></br>
     </div>
    )
