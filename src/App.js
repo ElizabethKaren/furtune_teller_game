@@ -48,11 +48,12 @@ export class App extends Component{
   }
 
   findSign = (month, day) => {
-    console.log(month + day)
-    if (month === 'sept' && day === 19){
+    if (month === 'sept' && day < 24){
       this.setState({ sign: 'Virgo' })
-    } else if (month == 'feb' && day == 6){
+    } else if (month == 'feb' && day < 20){
       this.setState({ sign: 'Aquarius' })
+    } else if (month == 'jan' && day < 16){
+      this.setState({ sign: 'Capricorn'})
     }
   }
 
