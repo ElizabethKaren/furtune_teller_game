@@ -6,6 +6,8 @@ import HomePage from './Componenets/HomePage'
 import Nav from './Componenets/Nav'
 import 'semantic-ui-css/semantic.min.css'
 
+const url = 'http://localhost:3000/signs'
+
 export class App extends Component{
 
   state = {
@@ -14,7 +16,8 @@ export class App extends Component{
     day: 0,
     year: '',
     sign: '',
-    years: []
+    years: [],
+    signs: []
   }
 
   createYearArray = () => {
@@ -30,9 +33,11 @@ export class App extends Component{
 
   componentDidMount(){
     this.createYearArray()
+    this.fetchingSings()
   }
-  
 
+  fetchingSings = () => fetch(url).then(res => res.json()).then(signs => this.setState({ signs }))
+  
   handleOnChange = e => this.setState({ [e.target.name]: e.target.value })
 
   submitBirthday = () => {
@@ -58,7 +63,7 @@ export class App extends Component{
   }
 
   render(){
-    console.log(this.state)
+    console.log(this.state.signs)
   return (
     <div className="App">
       <Nav sign={this.state.sign} birthday={this.state.birthday} />
