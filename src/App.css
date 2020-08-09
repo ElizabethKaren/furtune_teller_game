@@ -1,6 +1,16 @@
 .App {
   text-align: center;
   background-color: rgb(239, 239, 240);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+#centered{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
 }
 
 .App-logo {
