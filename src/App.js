@@ -1,11 +1,14 @@
 import { Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 import Sign from './Componenets/Sign'
 import HomePage from './Componenets/HomePage'
 import Nav from './Componenets/Nav'
 import FindYourMatch from './Componenets/FindYourMatch'
 import DisplayHoriscope from './Componenets/DisplayHoriscope'
+import Person from './Componenets/Person'
+import MessageForm from './Componenets/MessageForm'
 import 'semantic-ui-css/semantic.min.css'
 
 const url = 'http://localhost:3000/signs'
@@ -15,6 +18,7 @@ const matchUrl = 'http://localhost:3000/matches'
 export class App extends Component{
 
   state = {
+    showMessage: false,
     users: [],
     birthday: null,
     month: '',
@@ -155,15 +159,18 @@ export class App extends Component{
     this.setState({ sign: sign })
   }
 
+  messageBubleAppear = () => this.setState({ showMessage: true })
+
   render(){
     const mySign = this.state.signs.find(sign => sign.zodiac_sign === this.state.sign)
-  return (
+    return (
     <div className="App">
       <br></br>
       <br></br>
       <Nav sign={this.state.sign} birthday={this.state.birthday} />
-      <img className='ui centered medium image' src='https://res.cloudinary.com/teepublic/image/private/s--SIVNWQIj--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_c8e0ec,e_outline:48/co_c8e0ec,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1577739990/production/designs/7399322_0.jpg' alt='fortune teller' />
+      <Link to='/'><img className='ui centered small image' src='https://res.cloudinary.com/teepublic/image/private/s--SIVNWQIj--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_c8e0ec,e_outline:48/co_c8e0ec,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1577739990/production/designs/7399322_0.jpg' alt='fortune teller' /></Link>
       <Switch>
+        <Route path='/findmatches/:id' render={(history)=> <Person showMessage={this.state.showMessage} messageBubleAppear={this.messageBubleAppear} users={this.state.users} history={history} /> } />
         <Route path='/findmatches' render={()=> <FindYourMatch matches={this.state.matches} users={this.state.users} sign={mySign}/> } />
         <Route path='/horiscope' render={()=> <DisplayHoriscope sign={mySign} />} />
         <Route path='/sign' render={()=> <Sign birthday={this.state.birthday}/>}/>
