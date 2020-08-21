@@ -8,17 +8,21 @@ import DisplayHoriscope from './Componenets/DisplayHoriscope'
 import 'semantic-ui-css/semantic.min.css'
 
 const url = 'http://localhost:3000/signs'
+const usersUrl = 'http://localhost:3000/users'
+const matchUrl = 'http://localhost:3000/matches'
 
 export class App extends Component{
 
   state = {
+    users: [],
     birthday: null,
     month: '',
     day: 0,
     year: '',
     sign: '',
     years: [],
-    signs: []
+    signs: [],
+    matches: []
   }
 
   createYearArray = () => {
@@ -35,7 +39,13 @@ export class App extends Component{
   componentDidMount(){
     this.createYearArray()
     this.fetchingSings()
+    this.fetchUsers()
+    this.fetchMatches()
   }
+
+  fetchMatches = () => fetch(matchUrl).then(res => res.json()).then(matches => this.setState({ matches }))
+
+  fetchUsers = () => fetch(usersUrl).then(res => res.json()).then(users => this.setState({ users }))
 
   fetchingSings = () => fetch(url).then(res => res.json()).then(signs => this.setState({ signs }))
   
