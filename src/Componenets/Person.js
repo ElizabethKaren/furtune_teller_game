@@ -14,7 +14,7 @@ const Person = props => {
             <img src={thisPerson.picture} alt={thisPerson.first_name} /> 
             <h3>{thisPerson.occupation} in {thisPerson.location}</h3>
             <button className='ui small button' onClick={props.messageBubleAppear}>Message {thisPerson.first_name}</button>
-            {props.showMessage ? <MessageForm /> : null }
+            {props.showMessage ? <MessageForm thisPerson={thisPerson} /> : null }
         </div>
     )
 }
