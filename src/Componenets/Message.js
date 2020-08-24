@@ -1,10 +1,13 @@
 import React from 'react'
 
 const Message = props => {
-    console.log(props)
+    const messageId = props.history.params.id
+    const thisMessage = props.messages.find(message => message.id === messageId)
+    const sender = props.user.find(user => user.id === thisMessage.sender_id)
     return (
         <div>
-            Name
+            {sender.first_name}
+            {thisMessage.text} 
         </div>
     )
 }
