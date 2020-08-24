@@ -9,6 +9,7 @@ import FindYourMatch from './Componenets/FindYourMatch'
 import DisplayHoriscope from './Componenets/DisplayHoriscope'
 import Person from './Componenets/Person'
 import MessageForm from './Componenets/MessageForm'
+import Inbox from './Componenets/Inbox'
 import 'semantic-ui-css/semantic.min.css'
 
 const url = 'http://localhost:3000/signs'
@@ -27,8 +28,11 @@ export class App extends Component{
     sign: '',
     years: [],
     signs: [],
-    matches: []
+    matches: [],
+    showSignIn: false
   }
+
+  signIn = () => this.setState({ showSignIn: !this.state.showSignIn })
 
   createYearArray = () => {
     const array = [2020]
@@ -172,9 +176,10 @@ export class App extends Component{
       <Switch>
         <Route path='/findmatches/:id' render={(history)=> <Person showMessage={this.state.showMessage} messageBubleAppear={this.messageBubleAppear} users={this.state.users} history={history} /> } />
         <Route path='/findmatches' render={()=> <FindYourMatch matches={this.state.matches} users={this.state.users} sign={mySign}/> } />
+        <Route path='/horiscope/inbox' render={()=> <Inbox /> } />
         <Route path='/horiscope' render={()=> <DisplayHoriscope sign={mySign} />} />
         <Route path='/sign' render={()=> <Sign birthday={this.state.birthday}/>}/>
-        <Route path='/' render={()=> <HomePage sign={mySign} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday} handleOnChange={this.handleOnChange}/> } />
+        <Route path='/' render={()=> <HomePage showSignIn={this.state.showSignIn} signIn={this.signIn} sign={mySign} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday} handleOnChange={this.handleOnChange}/> } />
       </Switch>
       <br></br>
       <br></br>

@@ -1,8 +1,10 @@
 import React from 'react'
 import '../Styles/HomePage.css'
 import DisplayHoriscope from './DisplayHoriscope'
+import SignInPage from './SignInPage'
 
 const HomePage = (props) => {
+    if (props.showSignIn) return <div><SignInPage/></div>
     if (props.birthday) return <div><DisplayHoriscope sign={props.sign}/></div>
     return (
         <div>
@@ -42,6 +44,7 @@ const HomePage = (props) => {
                         </div>
                     </div>
                     <button className='ui small button' onClick={props.submitBirthday}>Submit Birthday</button>
+                    <button className='ui small button' onClick={props.signIn}>Sign In</button>
                 </div>
             </div>
         </div>
