@@ -6,15 +6,15 @@ const SignInPage = props =>{
             <div className='fields'>
             <div className='field'>
                 <label>Email</label>
-                <input type='text' placeholder='user@furtuneteller.com'></input>
+                <input value={props.username} name='username' onChange={props.handleOnChange} type='text' placeholder='user@furtuneteller.com'></input>
             </div>
             <div className='field'>
                 <label>Password</label>
-                 <input type='password'></input>
+                 <input value={props.password} name='password' onChange={props.handleOnChange} type='password'></input>
             </div>
         </div>
             <div className='field'>
-                <button className='ui small button'>Submit</button>
+                <button onClick={props.submitUser} className='ui small button'>Submit</button>
             </div>
         </div>
     )

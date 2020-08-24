@@ -29,8 +29,12 @@ export class App extends Component{
     years: [],
     signs: [],
     matches: [],
-    showSignIn: false
+    showSignIn: false,
+    password: '',
+    username: ''
   }
+
+  submitUser = () => console.log(this.state.username)
 
   signIn = () => this.setState({ showSignIn: !this.state.showSignIn })
 
@@ -179,7 +183,7 @@ export class App extends Component{
         <Route path='/horiscope/inbox' render={()=> <Inbox /> } />
         <Route path='/horiscope' render={()=> <DisplayHoriscope sign={mySign} />} />
         <Route path='/sign' render={()=> <Sign birthday={this.state.birthday}/>}/>
-        <Route path='/' render={()=> <HomePage showSignIn={this.state.showSignIn} signIn={this.signIn} sign={mySign} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday} handleOnChange={this.handleOnChange}/> } />
+        <Route path='/' render={()=> <HomePage submitUser={this.submitUser} username={this.state.username} password={this.state.password} handleOnChange={this.handleOnChange} showSignIn={this.state.showSignIn} signIn={this.signIn} sign={mySign} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday} handleOnChange={this.handleOnChange}/> } />
       </Switch>
       <br></br>
       <br></br>

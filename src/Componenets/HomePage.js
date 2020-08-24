@@ -4,7 +4,7 @@ import DisplayHoriscope from './DisplayHoriscope'
 import SignInPage from './SignInPage'
 
 const HomePage = (props) => {
-    if (props.showSignIn) return <div className='centered'><SignInPage/></div>
+    if (props.showSignIn) return <div className='centered'><SignInPage submitUser={props.submitUser} username={props.username} password={props.password} handleOnChange={props.handleOnChange}/></div>
     if (props.birthday) return <div><DisplayHoriscope sign={props.sign}/></div>
     return (
         <div>
