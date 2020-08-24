@@ -12,7 +12,9 @@ const SignInPage = props =>{
                 <label>Password</label>
                  <input type='password'></input>
             </div>
-            <button className='ui small button'>Submit</button>
+        </div>
+            <div className='field'>
+                <button className='ui small button'>Submit</button>
             </div>
         </div>
     )
