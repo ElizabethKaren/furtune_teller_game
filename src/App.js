@@ -10,6 +10,7 @@ import DisplayHoriscope from './Componenets/DisplayHoriscope'
 import Person from './Componenets/Person'
 import MessageForm from './Componenets/MessageForm'
 import Inbox from './Componenets/Inbox'
+import Message from './Componenets/Message'
 import 'semantic-ui-css/semantic.min.css'
 
 const url = 'http://localhost:3000/signs'
@@ -195,6 +196,7 @@ export class App extends Component{
       <Switch>
         <Route path='/findmatches/:id' render={(history)=> <Person showMessage={this.state.showMessage} messageBubleAppear={this.messageBubleAppear} users={this.state.users} history={history} /> } />
         <Route path='/findmatches' render={()=> <FindYourMatch matches={this.state.matches} users={this.state.users} sign={mySign}/> } />
+        <Route path='/horiscope/inbox/:id' render={(history) => <Message history={history} users={this.state.users} messages={this.state.messages}/>} />
         <Route path='/horiscope/inbox' render={()=> <Inbox myMessages={myMessages}/> } />
         <Route path='/horiscope' render={()=> <DisplayHoriscope sign={mySign} />} />
         <Route path='/sign' render={()=> <Sign birthday={this.state.birthday}/>}/>
