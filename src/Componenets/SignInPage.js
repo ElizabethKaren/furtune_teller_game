@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SignInPage = props =>{
     return (
@@ -14,7 +15,7 @@ const SignInPage = props =>{
             </div>
         </div>
             <div className='field'>
-                <button onClick={props.submitUser} className='ui small button'>Submit</button>
+                <Link to='/findmatches' onClick={props.submitUser}><button className='ui small button'>Submit</button></Link>
             </div>
         </div>
     )

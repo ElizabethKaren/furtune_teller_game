@@ -5,7 +5,6 @@ const Person = props => {
     const thisId = props.history.match.params.id
     const thisPerson = props.users.find(user => user.id === parseInt(thisId))
     if (!thisPerson) return <div>Loading...</div>
-    console.log(thisPerson)
     return (
         <div>
             <h1>{thisPerson.sign}</h1>

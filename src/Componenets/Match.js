@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 const Match = props => {
     const person = props.users.find(person => person.id === props.id)
-    console.log(person)
     if (!person) return <div></div>
     return (
         <div>

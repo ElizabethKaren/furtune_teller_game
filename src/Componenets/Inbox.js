@@ -1,9 +1,10 @@
 import React from 'react'
 
 const Inbox = props =>{
+    console.log(props)
     return (
         <div>
-            <p>Message</p>
+            {props.myMessages.map(message => <p><strong>{message.text}</strong></p>)}
         </div>
     )
 }
