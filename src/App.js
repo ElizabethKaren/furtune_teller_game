@@ -41,7 +41,7 @@ export class App extends Component{
   submitUser = () => {
     const user = this.state.users.find(user => user.email === this.state.username)
     if (user.password === this.state.password){
-      this.setState({ userSignedIn: user, sign: user.sign })
+      this.setState({ showSignIn: false, userSignedIn: user, sign: user.sign })
     } else {
       alert('Incorrect Password Or Username')
     }
