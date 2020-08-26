@@ -43,8 +43,14 @@ const HomePage = (props) => {
                             </select>
                         </div>
                     </div>
-                    <button className='ui small button' onClick={props.submitBirthday}>Submit Birthday</button>
-                    <button className='ui small button' onClick={props.signIn}>Sign In</button>
+                    <br></br>
+                    <div>
+                        <button className='ui small button' onClick={props.submitBirthday}>Create Account</button>
+                    </div>
+                    <br></br>
+                    <div>
+                        <button className='ui small button' onClick={props.signIn}>Sign In</button>
+                    </div>
                 </div>
             </div>
         </div>
