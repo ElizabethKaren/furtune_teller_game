@@ -13,7 +13,7 @@ const Message = props => {
             <img className='ui small image' src={sender.picture} alt={sender.first_name} />
             {sender.first_name}
             {thisMessage.text} 
-            <button className='ui small button'>Reply</button>
+            <button onClick={(messageId)=> props.onReply(messageId)} className='ui small button'>Reply</button>
         </div>
     )
 }
