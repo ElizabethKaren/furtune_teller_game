@@ -12,7 +12,7 @@ const Person = props => {
             <h2>{thisPerson.bio}</h2>
             <img src={thisPerson.picture} alt={thisPerson.first_name} /> 
             <h3>{thisPerson.occupation} in {thisPerson.location}</h3>
-            <button className='ui small button' onClick={props.messageBubleAppear}>Message {thisPerson.first_name}</button>
+            <button className='ui secondary button' onClick={props.messageBubleAppear}>Message {thisPerson.first_name}</button>
             {props.showMessage ? <MessageForm thisPerson={thisPerson} /> : null }
         </div>
     )

@@ -8,7 +8,7 @@ const Nav = props => {
     return (
         <div>
             <h3>A {props.sign} I see...</h3>
-           {props.myMessages.length > 0 ? <Link to='/horiscope/inbox'><button className='ui small button'>{props.myMessages.length} Messages</button></Link> : null }
+           {props.myMessages.length > 0 ? <Link to='/horiscope/inbox'><button className='ui secondary button'>{props.myMessages.length} Messages</button></Link> : null }
         </div>
     )
 }

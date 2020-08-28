@@ -8,8 +8,8 @@ const DisplayHoriscope = props => {
         <div id='centered' className='ui grid'>
             <div className="twelve wide stretched column">
                 <div className='"ui segment"'>
-                    <h4>{props.sign.furtune}</h4>
-                    <Link to='/findmatches'><button className='ui small button'>See My Matches</button></Link>
+                    <h4><strong>{props.sign.furtune}</strong></h4>
+                    <Link to='/findmatches'><button className='ui secondary button'>See My Matches</button></Link>
                 </div>
             </div>
         </div>
