@@ -194,7 +194,8 @@ export class App extends Component{
       <br></br>
       <br></br>
       <Nav myMessages={myMessages} sign={this.state.sign} birthday={this.state.birthday} />
-      <Link to='/'><img className='ui centered small image' src='https://res.cloudinary.com/teepublic/image/private/s--SIVNWQIj--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_c8e0ec,e_outline:48/co_c8e0ec,e_outline:inner_fill:48/co_ffffff,e_outline:48/co_ffffff,e_outline:inner_fill:48/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1577739990/production/designs/7399322_0.jpg' alt='fortune teller' /></Link>
+      <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link>
+      <div className='stuff-container'>
       <Switch>
         <Route path='/findmatches/:id' render={(history)=> <Person onReply={this.onReply} showMessage={this.state.showMessage} messageBubleAppear={this.messageBubleAppear} users={this.state.users} history={history} /> } />
         <Route path='/findmatches' render={()=> <FindYourMatch matches={this.state.matches} users={this.state.users} sign={mySign}/> } />
@@ -204,6 +205,7 @@ export class App extends Component{
         <Route path='/sign' render={()=> <Sign birthday={this.state.birthday}/>}/>
         <Route path='/' render={()=> <HomePage submitUser={this.submitUser} username={this.state.username} password={this.state.password} handleOnChange={this.handleOnChange} showSignIn={this.state.showSignIn} signIn={this.signIn} sign={mySign} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday} handleOnChange={this.handleOnChange}/> } />
       </Switch>
+      </div>
       <br></br>
       <br></br>
     </div>

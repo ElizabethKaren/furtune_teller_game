@@ -1,9 +1,9 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(239, 239, 240);
+  /* background-color: rgb(239, 239, 240); */
+  background-image: url('https://i.pinimg.com/564x/91/79/03/917903d10e8a65f565834799d2cdc0c4.jpg');
 }
 
 code {
