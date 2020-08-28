@@ -1,11 +1,11 @@
-.stuff-container{
+/* .stuff-container{
   background-color: black;
   width: 70vw;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column; 
   text-align: center;
-}
+} */
 .App {
   text-align: center;
   background-color: rgba(201, 157, 238, 0.815);
