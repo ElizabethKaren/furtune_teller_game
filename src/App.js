@@ -195,7 +195,7 @@ export class App extends Component{
       <br></br>
       <Nav myMessages={myMessages} sign={this.state.sign} birthday={this.state.birthday} />
       <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link>
-      <div className='stuff-container'>
+      <div>
       <Switch>
         <Route path='/findmatches/:id' render={(history)=> <Person onReply={this.onReply} showMessage={this.state.showMessage} messageBubleAppear={this.messageBubleAppear} users={this.state.users} history={history} /> } />
         <Route path='/findmatches' render={()=> <FindYourMatch matches={this.state.matches} users={this.state.users} sign={mySign}/> } />

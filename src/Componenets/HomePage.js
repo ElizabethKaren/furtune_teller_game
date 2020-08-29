@@ -45,12 +45,12 @@ const HomePage = (props) => {
                     </div>
                     <br></br>
                     <div>
-                        <button className='ui secondary button' onClick={props.submitBirthday}>Create Account</button>
+                        <button className='ui secondary button' onClick={props.submitBirthday}>Enter</button>
                     </div>
                     <br></br>
-                    <div>
+                    {/* <div>
                         <button className='ui secondary button' onClick={props.signIn}>Sign In</button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
