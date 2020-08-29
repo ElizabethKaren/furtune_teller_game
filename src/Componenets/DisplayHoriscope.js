@@ -2,7 +2,7 @@ import React from 'react'
 import '../Styles/DisplayHoriscope.css'
 
 const DisplayHoriscope = props => {
-    if (!props.sign) return <div>No Sign Yet</div>
+    if (props.sign == '') return <div>No Sign Yet</div>
     return (
         <div>
             <br></br>
