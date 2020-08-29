@@ -65,6 +65,8 @@ export class App extends Component{
       case 'Pisces':
         furtune = 'Pisces is a mutable water sign represented by two fish swimming in opposite directions.  It’s ruler is the planet Jupiter.  Some have said the two fish represent a ‘sink or swim’ quality they possess.  The expansiveness of Jupiter is connected to the spiritual instinct.  While the other two water signs possess armor (the crab shell or the scorpion’s exoskeleton) the fish lacks major defenses to protect its sensitivity.  This makes the walls between them an others very thin.  They are very intuitive and tend to pick up on feelings of those around them.  They can be pulled into beneficial or destructive company depending on the currents they move in.  There is a connection to the world of dream and a tendency to self medicate with drugs or alcohol.  As lovers they will give all of themselves.  The sex can take on a spiritual quality,  whereby they are transcending a more gross human state by total envelopment in the sensual ‘feels.'
       break;
+      default:
+        furtune = null 
     }
     this.setState({ furtune: furtune })
   }
@@ -180,6 +182,8 @@ export class App extends Component{
           sign = 'Capricorn'
         }
         break;
+      default:
+        sign = null 
     }
     this.loadSign(sign)
     this.setState({ sign: sign })
@@ -195,7 +199,7 @@ export class App extends Component{
       <div>
       <Switch>
         <Route path='/horiscope' render={()=> <DisplayHoriscope sign={this.state.sign} furtune={this.state.furtune}/>}></Route>
-        <Route path='/' render={()=> <HomePage handleOnChange={this.handleOnChange} sign={this.state.sign} furtune={this.state.furtune} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday} handleOnChange={this.handleOnChange}/> } />
+        <Route path='/' render={()=> <HomePage handleOnChange={this.handleOnChange} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday}/> } />
       </Switch>
       </div>
       <br></br>
