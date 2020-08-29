@@ -6,6 +6,7 @@ const DisplayHoriscope = props => {
     if (!props.sign) return <div>No Sign Yet</div>
     return (
         <div>
+            <br></br>
         <div id='centered' className='ui grid'>
             <div className="twelve wide stretched column">
                 <div className='ui black label'>
