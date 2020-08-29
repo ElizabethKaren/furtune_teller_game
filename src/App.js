@@ -194,12 +194,7 @@ export class App extends Component{
       <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link>
       <div>
       <Switch>
-        {/* <Route path='/findmatches/:id' render={(history)=> <Person onReply={this.onReply} showMessage={this.state.showMessage} messageBubleAppear={this.messageBubleAppear} users={this.state.users} history={history} /> } />
-        <Route path='/findmatches' render={()=> <FindYourMatch matches={this.state.matches} users={this.state.users} sign={mySign}/> } />
-        <Route path='/horiscope/inbox/:id' render={(history) => <Message history={history} users={this.state.users} messages={this.state.messages}/>} />
-        <Route path='/horiscope/inbox' render={()=> <Inbox myMessages={myMessages}/> } />
-        <Route path='/horiscope' render={()=> <DisplayHoriscope sign={mySign} />} />
-        <Route path='/sign' render={()=> <Sign birthday={this.state.birthday}/>}/> */}
+        <Route path='/horiscope' render={()=> <DisplayHoriscope sign={this.state.sign} furtune={this.state.furtune}/>}></Route>
         <Route path='/' render={()=> <HomePage handleOnChange={this.handleOnChange} sign={this.state.sign} furtune={this.state.furtune} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday} handleOnChange={this.handleOnChange}/> } />
       </Switch>
       </div>
