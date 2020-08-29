@@ -2,4 +2,9 @@
 width: 100%;
 display: flex;
 align-items: center;
+font-family: 'Lobster Two', cursive;
+font-weight: 300px;
+}
+h4{
+    font-family: 'Lobster Two', cursive;
 }
