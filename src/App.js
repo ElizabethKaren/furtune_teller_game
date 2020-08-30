@@ -6,6 +6,7 @@ import DisplayHoriscope from './Componenets/DisplayHoriscope'
 import Enter from './Componenets/Enter'
 import 'semantic-ui-css/semantic.min.css'
 import PalmReading from './Componenets/PalmReading'
+import Animal from './Componenets/Animal'
 
 export class App extends Component{
 
@@ -21,7 +22,10 @@ export class App extends Component{
     displayReading: false,
     palmreading: 'You will live a long happy life',
     chineseZodiac: '',
-    animal: ''
+    animal: '',
+    picture: '',
+    bestMatch: [],
+    avoid: []
   }
 
   handleOnChange = e => this.setState({ [e.target.name]: e.target.value })
@@ -31,48 +35,87 @@ export class App extends Component{
   }
 
   findChineseZodiac = (year) => {
-    console.log(year)
+    let avoid = []
+    let bestMatch = []
+    let picture = ''
     let animal = ''
     switch ((year - 4) % 12) {
-      case  0: animal = 'Rat';
+      case  0:
+        animal = 'Rat';
+        picture = 'https://images-na.ssl-images-amazon.com/images/I/61rgr+X9-AL.jpg'
+        avoid = ['Horse', 'Rooster']
+        bestMatch  = ['Ox', 'Dragon', 'Monkey'];
       break;
       case  1:
-        animal = 'Ox';
+        animal = 'Ox'
+        bestMatch = ['Rat', 'Snake', 'Rooster']
+        avoid = ['Tiger', 'Dragon', 'Horse', 'Sheep']
+        picture = 'https://i.pinimg.com/564x/80/20/e7/8020e7ed10b702912c3d17176dc7baaf.jpg';
       break;
       case  2:
-        animal = 'Tiger';
+        animal = 'Tiger'
+        bestMatch = ['Dragon', 'Horse', 'Pig']
+        avoid = ['Ox', 'Tiger', 'Snake', 'Monkey']
+        picture = 'https://i.pinimg.com/564x/88/8b/b4/888bb4d24cda3a1b4a0827e7cfe487e0.jpg';
       break;
       case  3:
-        animal = 'Rabbit';
+        animal = 'Rabbit'
+        bestMatch = ['Sheep', 'Monkey', 'Dog', 'Pig']
+        avoid = ['Snake', 'Rooster']
+        picture = 'https://i.pinimg.com/564x/38/64/86/38648664766e7843b7684bf3e7ff4ef4.jpg';
       break;
       case  4:
-        animal = 'Dragon';
+        animal = 'Dragon'
+        bestMatch = ['Rooster', 'Rat', 'Monkey']
+        avoid = ['Ox', 'Sheep', 'Dog']
+        picture = 'https://i.pinimg.com/564x/ce/b9/d6/ceb9d655361f573d0561f01f99ab11c3.jpg';
       break;
       case  5:
-        animal = 'Snake';
+        animal = 'Snake'
+        bestMatch = ['Dragon', 'Rooster']
+        avoid = ['Tiger', 'Rabbit', 'Snake', 'Sheep', 'Pig']
+        picture = 'https://i.pinimg.com/564x/0b/ee/15/0bee152359fb9db2b2b6b319cfc3e493.jpg';
       break;
       case  6:
-        animal = 'Horse';
+        animal = 'Horse'
+        bestMatch = ['Tiger', 'Sheep', 'Rabbit']
+        avoid = ['Rat', 'Ox', 'Rooster', 'Horse']
+        picture = 'https://i.pinimg.com/originals/ba/7e/41/ba7e4171b72b6f88a17e59df0061553b.jpg';
       break;
       case  7:
-        animal = 'Goat';
+        animal = 'Goat'
+        bestMatch = ['Rabbit', 'Horse', 'Pig']
+        avoid = ['Ox', 'Tiger', 'Dog']
+        picture = 'https://i.pinimg.com/564x/7c/53/83/7c5383eb1feab0de2e2cf86663bba127.jpg';
       break;
       case  8:
-        animal = 'Monkey';
+        animal = 'Monkey'
+        bestMatch = ['Ox', 'Rabbit']
+        avoid = ['Tiger', 'Pig']
+        picture = 'https://imgc.artprintimages.com/img/print/chinese-zodiac-animal-astrological-sign-monkey_u-l-pt3z020.jpg?h=900&p=0&w=900';
       break;
       case  9:
-        animal = 'Rooster';
+        animal = 'Rooster'
+        bestMatch = ['Ox', 'Snake']
+        avoid = ['Rat', 'Rabbit', 'Horse', 'Rooster', 'Dog']
+        picture = 'https://miro.medium.com/max/265/1*bcuE2jhrKdNBPEVdNKwvBw.jpeg';
       break;
       case 10:
-        animal = 'Dog';
+        animal = 'Dog'
+        bestMatch = ['Rabbit', 'Tiger']
+        avoid = ['Dragon', 'Sheep', 'Rooster']
+        picture = 'https://i.pinimg.com/564x/08/b2/f2/08b2f28a4850fbc4d1770b1b40424870.jpg';
       break;
       case 11:
-        animal = 'Pig';
+        animal = 'Pig'
+        bestMatch = ['Tiger', 'Rabbit', 'Sheep']
+        avoid = ['Snake', 'Monkey']
+        picture = 'https://i.pinimg.com/564x/5b/d9/11/5bd9117b719455d1257a01d1a8b8a5d7.jpg';
       break;
       default:
         animal = ''
   }
-    this.setState({ animal: animal })
+    this.setState({ animal: animal, picture: picture, bestMatch: bestMatch, avoid: avoid })
   }
 
   loadSign = (sign) => {
@@ -242,10 +285,11 @@ export class App extends Component{
   displayReading = () => setTimeout( () => this.setState({ displayReading: true }) , 1000)
 
   render(){
-    console.log(this.state.animal)
+    console.log(this.state.picture)
     return (
     <div className="App">
       <Switch>
+        <Route path='/animal' render={()=> <Animal bestMatch={this.state.bestMatch} picture={this.state.picture} animal={this.state.animal} />}></Route>
         <Route path='/palmreading' render={()=> <PalmReading displayReading={this.state.displayReading} fortune={this.state.palmreading}/> }></Route>
         <Route path='/horiscope' render={()=> <DisplayHoriscope birthday={this.state.birthday} sign={this.state.sign} furtune={this.state.furtune}/>}></Route>
         <Route path='/birthday' render={()=> <HomePage handleOnChange={this.handleOnChange} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday}/> } />

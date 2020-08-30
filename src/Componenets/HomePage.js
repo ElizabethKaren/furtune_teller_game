@@ -45,7 +45,8 @@ const HomePage = (props) => {
                     </div>
                     <br></br>
                     <div>
-                        <Link to='/horiscope' onClick={props.submitBirthday}><button className='ui secondary button'>Reveal Zodiac</button></Link>
+                        <Link to='/horiscope' onClick={props.submitBirthday}><button className='ui secondary button'>Western Zodiac</button></Link>
+                        <Link to='/animal' onClick={props.submitBirthday}><button className='ui secondary button'>Chinese Zodiac</button></Link>
                     </div>
                     <br></br>
                 </div>
