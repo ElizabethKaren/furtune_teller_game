@@ -5,7 +5,7 @@ const Animal = props => {
     console.log(props)
     if (!props.animal) return <div className='ui black label'>No Sign</div>
     return (
-        <div id='centered'>
+        <div id='chinesecenter'>
             <img className='ui medium image' src={props.picture} alt={props.animal} /> 
             <div className='ui black label'>
                 <h2>{props.animal}</h2>
