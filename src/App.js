@@ -25,7 +25,8 @@ export class App extends Component{
     animal: '',
     picture: '',
     bestMatch: [],
-    avoid: []
+    avoid: [],
+    description: ''
   }
 
   handleOnChange = e => this.setState({ [e.target.name]: e.target.value })
@@ -35,6 +36,7 @@ export class App extends Component{
   }
 
   findChineseZodiac = (year) => {
+    let description = ''
     let avoid = []
     let bestMatch = []
     let picture = ''
@@ -42,72 +44,84 @@ export class App extends Component{
     switch ((year - 4) % 12) {
       case  0:
         animal = 'Rat';
+        description = 'Those born under the Chinese Zodiac sign of the Rat are quick-witted, clever, charming, sharp and funny. They have excellent taste, are a good friend and are generous and loyal to others considered part of its pack. Motivated by money, can be greedy, is ever curious, seeks knowledge and welcomes challenges.'
         picture = 'https://images-na.ssl-images-amazon.com/images/I/61rgr+X9-AL.jpg'
         avoid = ['Horse', 'Rooster']
         bestMatch  = ['Ox', 'Dragon', 'Monkey'];
       break;
       case  1:
         animal = 'Ox'
+        description = 'Another of the powerful Chinese Zodiac signs, the Ox is steadfast, solid, a goal-oriented leader, detail-oriented, hard-working, stubborn, serious and introverted but can feel lonely and insecure. Takes comfort in friends and family and is a reliable, protective and strong companion.'
         bestMatch = ['Rat', 'Snake', 'Rooster']
         avoid = ['Tiger', 'Dragon', 'Horse', 'Sheep']
         picture = 'https://i.pinimg.com/564x/80/20/e7/8020e7ed10b702912c3d17176dc7baaf.jpg';
       break;
       case  2:
         animal = 'Tiger'
+        description = 'Those born under the Chinese Zodiac sign of the Tiger are authoritative, self-possessed, have strong leadership qualities, are charming, ambitious, courageous, warm-hearted, highly seductive, moody, intense, and they’re ready to pounce at any time.'
         bestMatch = ['Dragon', 'Horse', 'Pig']
         avoid = ['Ox', 'Tiger', 'Snake', 'Monkey']
         picture = 'https://i.pinimg.com/564x/88/8b/b4/888bb4d24cda3a1b4a0827e7cfe487e0.jpg';
       break;
       case  3:
         animal = 'Rabbit'
+        description = 'Those born under the Chinese Zodiac sign of the Rabbit enjoy being surrounded by family and friends. They’re popular, compassionate, sincere, and they like to avoid conflict and are sometimes seen as pushovers. Rabbits enjoy home and entertaining at home.'
         bestMatch = ['Sheep', 'Monkey', 'Dog', 'Pig']
         avoid = ['Snake', 'Rooster']
         picture = 'https://i.pinimg.com/564x/38/64/86/38648664766e7843b7684bf3e7ff4ef4.jpg';
       break;
       case  4:
         animal = 'Dragon'
+        description = 'A powerful sign, those born under the Chinese Zodiac sign of the Dragon are energetic and warm-hearted, charismatic, lucky at love and egotistic. They’re natural born leaders, good at giving orders and doing what’s necessary to remain on top.'
         bestMatch = ['Rooster', 'Rat', 'Monkey']
         avoid = ['Ox', 'Sheep', 'Dog']
         picture = 'https://i.pinimg.com/564x/ce/b9/d6/ceb9d655361f573d0561f01f99ab11c3.jpg';
       break;
       case  5:
         animal = 'Snake'
+        description = 'Those born under the Chinese Zodiac sign of the Snake are seductive, gregarious, introverted, generous, charming, good with money, analytical, insecure, jealous, slightly dangerous, smart, they rely on gut feelings, are hard-working and intelligent.'
         bestMatch = ['Dragon', 'Rooster']
         avoid = ['Tiger', 'Rabbit', 'Snake', 'Sheep', 'Pig']
         picture = 'https://i.pinimg.com/564x/0b/ee/15/0bee152359fb9db2b2b6b319cfc3e493.jpg';
       break;
       case  6:
         animal = 'Horse'
+        description = 'Those born under the Chinese Zodiac sign of the Horse love to roam free. They’re energetic, self-reliant, money-wise, and they enjoy traveling, love and intimacy. They’re great at seducing, sharp-witted, impatient and sometimes seen as a drifter.'
         bestMatch = ['Tiger', 'Sheep', 'Rabbit']
         avoid = ['Rat', 'Ox', 'Rooster', 'Horse']
         picture = 'https://i.pinimg.com/originals/ba/7e/41/ba7e4171b72b6f88a17e59df0061553b.jpg';
       break;
       case  7:
         animal = 'Goat'
+        description = 'Those born under the Chinese Zodiac sign of the Goat enjoy being alone in their thoughts. They’re creative, thinkers, wanderers, unorganized, high-strung and insecure, and can be anxiety-ridden. They need lots of love, support and reassurance. Appearance is important too.'
         bestMatch = ['Rabbit', 'Horse', 'Pig']
         avoid = ['Ox', 'Tiger', 'Dog']
         picture = 'https://i.pinimg.com/564x/7c/53/83/7c5383eb1feab0de2e2cf86663bba127.jpg';
       break;
       case  8:
         animal = 'Monkey'
+        description = 'Those born under the Chinese Zodiac sign of the Monkey thrive on having fun. They’re energetic, upbeat, and good at listening but lack self-control. They like being active and stimulated and enjoy pleasing self before pleasing others. They’re heart-breakers, not good at long-term relationships, morals are weak.'
         bestMatch = ['Ox', 'Rabbit']
         avoid = ['Tiger', 'Pig']
         picture = 'https://imgc.artprintimages.com/img/print/chinese-zodiac-animal-astrological-sign-monkey_u-l-pt3z020.jpg?h=900&p=0&w=900';
       break;
       case  9:
         animal = 'Rooster'
+        description = 'Those born under the Chinese Zodiac sign of the Rooster are practical, resourceful, observant, analytical, straightforward, trusting, honest, perfectionists, neat and conservative.'
         bestMatch = ['Ox', 'Snake']
         avoid = ['Rat', 'Rabbit', 'Horse', 'Rooster', 'Dog']
         picture = 'https://miro.medium.com/max/265/1*bcuE2jhrKdNBPEVdNKwvBw.jpeg';
       break;
       case 10:
         animal = 'Dog'
+        description = 'Those born under the Chinese Zodiac sign of the Dog are loyal, faithful, honest, distrustful, often guilty of telling white lies, temperamental, prone to mood swings, dogmatic, and sensitive. Dogs excel in business but have trouble finding mates.'
         bestMatch = ['Rabbit', 'Tiger']
         avoid = ['Dragon', 'Sheep', 'Rooster']
         picture = 'https://i.pinimg.com/564x/08/b2/f2/08b2f28a4850fbc4d1770b1b40424870.jpg';
       break;
       case 11:
         animal = 'Pig'
+        description = 'Those born under the Chinese Zodiac sign of the Pig are extremely nice, good-mannered and tasteful. They’re perfectionists who enjoy finer things but are not perceived as snobs. They enjoy helping others and are good companions until someone close crosses them, then look out! They’re intelligent, always seeking more knowledge, and exclusive.'
         bestMatch = ['Tiger', 'Rabbit', 'Sheep']
         avoid = ['Snake', 'Monkey']
         picture = 'https://i.pinimg.com/564x/5b/d9/11/5bd9117b719455d1257a01d1a8b8a5d7.jpg';
@@ -115,7 +129,7 @@ export class App extends Component{
       default:
         animal = ''
   }
-    this.setState({ animal: animal, picture: picture, bestMatch: bestMatch, avoid: avoid })
+    this.setState({ animal: animal, picture: picture, bestMatch: bestMatch, avoid: avoid, description: description })
   }
 
   loadSign = (sign) => {
@@ -289,7 +303,7 @@ export class App extends Component{
     return (
     <div className="App">
       <Switch>
-        <Route path='/animal' render={()=> <Animal avoid={this.state.avoid} bestMatch={this.state.bestMatch} picture={this.state.picture} animal={this.state.animal} />}></Route>
+        <Route path='/animal' render={()=> <Animal description={this.state.description} avoid={this.state.avoid} bestMatch={this.state.bestMatch} picture={this.state.picture} animal={this.state.animal} />}></Route>
         <Route path='/palmreading' render={()=> <PalmReading displayReading={this.state.displayReading} fortune={this.state.palmreading}/> }></Route>
         <Route path='/horiscope' render={()=> <DisplayHoriscope birthday={this.state.birthday} sign={this.state.sign} furtune={this.state.furtune}/>}></Route>
         <Route path='/birthday' render={()=> <HomePage handleOnChange={this.handleOnChange} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday}/> } />

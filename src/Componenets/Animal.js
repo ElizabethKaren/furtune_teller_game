@@ -9,6 +9,7 @@ const Animal = props => {
             <img className='ui medium image' src={props.picture} alt={props.animal} /> 
             <div className='ui black label'>
                 <h2>{props.animal}</h2>
+                <h3>{props.description}</h3>
                 <h4>Best Matches: {props.bestMatch.map(match => match + ', ' )}</h4>
                 <h4>Better to Avoid: {props.avoid.map(match => match + ', ' )}</h4>
             </div>
