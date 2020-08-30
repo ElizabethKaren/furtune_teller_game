@@ -19,13 +19,35 @@ export class App extends Component{
     signs: [],
     furtune: '',
     displayReading: false,
-    palmreading: 'You will live a long happy life'
+    palmreading: 'You will live a long happy life',
+    chineseZodiac: '',
+    animal: ''
   }
 
   handleOnChange = e => this.setState({ [e.target.name]: e.target.value })
 
   componentDidMount(){
     this.createYearArray()
+  }
+
+  findChineseZodiac = (year) => {
+    console.log(year)
+    let animal = ''
+    switch ((year - 4) % 12) {
+      case  0: animal = 'Rat';       break;
+      case  1: animal = 'Ox';            break;
+      case  2: animal = 'Tiger';     break;
+      case  3: animal = 'Rabbit';    break;
+      case  4: animal = 'Dragon';    break;
+      case  5: animal = 'Snake';     break;
+      case  6: animal = 'Horse';     break;
+      case  7: animal = 'Goat';  break;
+      case  8: animal = 'Monkey';    break;
+      case  9: animal = 'Rooster';   break;
+      case 10: animal = 'Dog';   break;
+      case 11: animal = 'Pig';   break;
+  }
+    this.setState({ animal: animal })
   }
 
   loadSign = (sign) => {
@@ -88,13 +110,14 @@ export class App extends Component{
   submitBirthday = () => {
     const month = this.state.month
     const day = parseInt(this.state.day)
-    const year = this.state.year
+    const year = parseInt(this.state.year)
     this.setState({ birthday: {
       month: month,
       day: day,
       year: year
     } })
     this.findSign(month, day)
+    this.findChineseZodiac(year)
   }
 
   findSign = (month, day) => {
@@ -194,6 +217,7 @@ export class App extends Component{
   displayReading = () => setTimeout( () => this.setState({ displayReading: true }) , 1000)
 
   render(){
+    console.log(this.state.animal)
     return (
     <div className="App">
       <Switch>

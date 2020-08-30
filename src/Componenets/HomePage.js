@@ -39,7 +39,7 @@ const HomePage = (props) => {
                         <div className='field'>
                             <select className="ui fluid search dropdown" name='year' onChange={props.handleOnChange}>
                                     <option>Year</option>
-                                    {props.years.map((year, index) => <option key={index} value={props.year}>{year}</option>)}
+                                    {props.years.map((year, index) => <option name='year' key={index} value={year}>{year}</option>)}
                             </select>
                         </div>
                     </div>
