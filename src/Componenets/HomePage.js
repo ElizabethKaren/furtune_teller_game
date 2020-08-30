@@ -1,10 +1,15 @@
 import React from 'react'
 import '../Styles/HomePage.css'
 import { Link } from 'react-router-dom'
+import Nav from './Nav'
 
 const HomePage = (props) => {
     return (
         <div>
+            <br></br>
+            <br></br>
+            <Nav sign={props.sign} birthday={props.birthday} />
+            <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link>
             <div className='centered'>
                 <div className='ui form'>
                     <div className='fields'>
@@ -40,7 +45,7 @@ const HomePage = (props) => {
                     </div>
                     <br></br>
                     <div>
-                        <Link to='/horiscope' onClick={props.submitBirthday}><button className='ui secondary button'>Enter</button></Link>
+                        <Link to='/horiscope' onClick={props.submitBirthday}><button className='ui secondary button'>Reveal Zodiac</button></Link>
                     </div>
                     <br></br>
                 </div>

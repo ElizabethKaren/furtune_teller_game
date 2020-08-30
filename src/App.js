@@ -1,11 +1,11 @@
 import { Route, Switch } from 'react-router-dom';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './App.css';
 import HomePage from './Componenets/HomePage'
-import Nav from './Componenets/Nav'
 import DisplayHoriscope from './Componenets/DisplayHoriscope'
+import Enter from './Componenets/Enter'
 import 'semantic-ui-css/semantic.min.css'
+import PalmReading from './Componenets/PalmReading'
 
 export class App extends Component{
 
@@ -17,7 +17,9 @@ export class App extends Component{
     sign: '',
     years: [],
     signs: [],
-    furtune: ''
+    furtune: '',
+    displayReading: false,
+    palmreading: 'You will live a long happy life'
   }
 
   handleOnChange = e => this.setState({ [e.target.name]: e.target.value })
@@ -189,21 +191,17 @@ export class App extends Component{
     this.setState({ sign: sign })
   }
 
+  displayReading = () => setTimeout( () => this.setState({ displayReading: true }) , 1000)
+
   render(){
     return (
     <div className="App">
-      <br></br>
-      <br></br>
-      <Nav sign={this.state.sign} birthday={this.state.birthday} />
-      <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link>
-      <div>
       <Switch>
-        <Route path='/horiscope' render={()=> <DisplayHoriscope sign={this.state.sign} furtune={this.state.furtune}/>}></Route>
-        <Route path='/' render={()=> <HomePage handleOnChange={this.handleOnChange} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday}/> } />
+        <Route path='/palmreading' render={()=> <PalmReading displayReading={this.state.displayReading} fortune={this.state.palmreading}/> }></Route>
+        <Route path='/horiscope' render={()=> <DisplayHoriscope birthday={this.state.birthday} sign={this.state.sign} furtune={this.state.furtune}/>}></Route>
+        <Route path='/birthday' render={()=> <HomePage handleOnChange={this.handleOnChange} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday}/> } />
+        <Route path='/' render={()=> <Enter displayReading={this.displayReading}/> }></Route>
       </Switch>
-      </div>
-      <br></br>
-      <br></br>
     </div>
    )
   }
