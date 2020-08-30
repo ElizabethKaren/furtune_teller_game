@@ -11,8 +11,9 @@ const HomePage = (props) => {
             <Nav sign={props.sign} birthday={props.birthday} />
             <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link>
             <div className='centered'>
+            <Link to='/'><div id='location-back' className='back'><strong>X</strong></div></Link>
                 <div className='ui black label'>
-                 <h4>{props.birthday.month} {props.birthday.day}, {props.birthday.year}</h4>
+                 <h4>{props.birthday.month} {props.birthday.day ? props.birthday.day : ' day unclear'}, {props.birthday.year ? props.birthday.year : ' year unclear'}</h4>
                 </div>
             </div>
             <br></br>
