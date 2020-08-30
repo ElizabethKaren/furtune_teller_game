@@ -205,84 +205,84 @@ export class App extends Component{
   findSign = (month, day) => {
     let sign = ''
     switch(month){
-      case 'jan':
+      case 'January':
         if (day < 21){
           sign = 'Capricorn'
         } else {
           sign = 'Aquarius'
         }
         break;
-      case 'feb':
+      case 'February':
         if (day < 20){
           sign = 'Aquarius'
         } else {
           sign = 'Pisces'
         }
         break;
-      case 'march':
+      case 'March':
         if (day < 22){
           sign = 'Pisces'
         } else {
           sign = 'Aries'
         }
         break;
-      case 'april':
+      case 'April':
         if (day < 21){
           sign = 'Aries'
         } else {
           sign = 'Taurus'
         }
         break;
-      case 'may':
+      case 'May':
         if (day < 22){
           sign = 'Taurus'
         } else {
           sign = 'Gemini'
         }
         break;
-      case 'june':
+      case 'June':
         if (day < 22){
           sign = 'Gemini'
         } else {
           sign = 'Cancer'
         }
         break;
-      case 'july':
+      case 'July':
         if (day < 24){
           sign = 'Cancer'
         } else {
           sign = 'Leo'
         }
         break;
-      case 'aug':
+      case 'August':
         if (day < 24){
           sign = 'Leo'
         } else {
           sign = 'Virgo'
         }
         break;
-      case 'sept':
+      case 'September':
         if (day < 24){
           sign = 'Virgo'
         } else {
           sign = 'Libra'
         }
         break;
-      case 'oct':
+      case 'October':
         if (day < 24){
           sign = 'Libra'
         } else {
           sign = 'Scorpio'
         }
         break;
-      case 'nov':
+      case 'November':
         if (day < 23){
           sign = 'Scorpio'
         } else {
           sign = 'Sagittarius'
         }
         break;
-      case 'dec':
+      case 'December':
         if (day < 23){
           sign = 'Sagittarius'
         } else {
