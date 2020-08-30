@@ -13,6 +13,7 @@ const DisplayHoriscope = props => {
             <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link>
         <br></br>
         <div id='centered' className='ui grid'>
+        <Link to='/birthday'><div id='out-locaiton' className='back'><strong>X</strong></div></Link>
             <div className="twelve wide stretched column">
                 <div className='ui black label'>
                 <div className='"ui segment"'>

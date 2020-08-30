@@ -4,6 +4,15 @@
   height: 100vh;
   background-image: url('https://i.pinimg.com/564x/96/82/c5/9682c5d382b98d67183323aa4b52e462.jpg');
 }
+.back{
+  color: red;
+  border-style: solid;
+  border-width: 2px;
+  background-color: black;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+}
 
 #centered{
   display: flex;
