@@ -20,7 +20,7 @@ export class App extends Component{
     signs: [],
     furtune: '',
     displayReading: false,
-    palmreading: 'You will live a long happy life',
+    palmreading: ['You will live a long happy life', 'Face the facts with dignity'],
     chineseZodiac: '',
     animal: '',
     picture: '',
@@ -301,12 +301,12 @@ export class App extends Component{
   displayReading = () => setTimeout( () => this.setState({ displayReading: true }) , 1000)
 
   render(){
-    console.log(this.state.palmreading)
+    const fortune = this.state.palmreading[Math.floor(Math.random() * this.state.palmreading.length)]
     return (
     <div className="App">
       <Switch>
         <Route path='/animal' render={()=> <Animal description={this.state.description} avoid={this.state.avoid} bestMatch={this.state.bestMatch} picture={this.state.picture} animal={this.state.animal} />}></Route>
-        <Route path='/palmreading' render={()=> <PalmReading displayReading={this.state.displayReading} fortune={this.state.palmreading}/> }></Route>
+        <Route path='/palmreading' render={()=> <PalmReading displayReading={this.state.displayReading} fortune={fortune}/> }></Route>
         <Route path='/horiscope' render={()=> <DisplayHoriscope birthday={this.state.birthday} sign={this.state.sign} furtune={this.state.furtune}/>}></Route>
         <Route path='/birthday' render={()=> <HomePage resetBday={this.resetBday} handleOnChange={this.handleOnChange} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday}/> } />
         <Route path='/' render={()=> <Enter displayReading={this.displayReading}/> }></Route>
