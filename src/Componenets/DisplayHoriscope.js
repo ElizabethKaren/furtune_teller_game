@@ -15,8 +15,8 @@ const DisplayHoriscope = props => {
         <div id='centered' className='ui grid'>
         <Link to='/birthday'><div id='out-locaiton' className='back'><strong>X</strong></div></Link>
             <div className="twelve wide stretched column">
-                <div className='ui black label'>
                 <div className='"ui segment"'>
+                <div className='ui black label'>
                     <h4><strong>{props.furtune}</strong></h4>
                 </div>
                 </div>
