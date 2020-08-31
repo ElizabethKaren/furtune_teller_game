@@ -20,7 +20,7 @@ export class App extends Component{
     signs: [],
     furtune: '',
     displayReading: false,
-    palmreading: ['You will live a long happy life', 'Face the facts with dignity', 'Love alludes you', 'You might as well go back to bed. The planets are totally aligned against you right now.', 'The stars will shine down on you tonight just long enough for you to get lucky.', 'One day you will be attacked by one of the animals that represents a Zodiac sign.'],
+    palmreading: ['You have a dark side','You will live a long happy life', 'Face the facts with dignity', 'Love alludes you', 'You might as well go back to bed. The planets are totally aligned against you right now.', 'The stars will shine down on you tonight just long enough for you to get lucky.', 'One day you will be attacked by one of the animals that represents a Zodiac sign.'],
     chineseZodiac: '',
     animal: '',
     picture: '',
