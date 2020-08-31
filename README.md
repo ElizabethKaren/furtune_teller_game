@@ -1,3 +1,3 @@
 <h2>Whats My Fortune?</h2>
 
-<img src='https://i.pinimg.com/564x/fe/67/e2/fe67e28989bcb172e28008d5be29251d.jpg' alt='pic'/>
+<img src='https://i0.wp.com/cdn.makezine.com/uploads/2012/08/zoltar.jpg?resize=400%2C599' alt='pic'/>
