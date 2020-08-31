@@ -298,7 +298,7 @@ export class App extends Component{
     this.setState({ sign: sign })
   }
 
-  displayReading = () => setTimeout( () => this.setState({ displayReading: true }) , 1000)
+  displayReading = () => setTimeout( () => this.setState({ displayReading: true }) , 9000)
 
   clearReading = () => this.setState({ displayReading: false })
 
