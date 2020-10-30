@@ -10,3 +10,12 @@
 #location-back{
     margin-left: 290px;
 }
+
+.backGroundChange{
+    background-color: black;
+    height: 100vh;
+}
+
+.noSign{
+    padding-top: 40vh;
+}

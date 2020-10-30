@@ -5,7 +5,10 @@ import '../Styles/Enter.css'
 const Enter = props =>{
   return (
       <div className='centered'>
-          <img src='https://i.pinimg.com/564x/fe/67/e2/fe67e28989bcb172e28008d5be29251d.jpg' alt='psychic' />
+        <br></br>
+        <br></br>
+        <br></br>
+          <img src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='psychic' />
           <br></br>
           <div className='buttons'>
             <Link to='/birthday'><button className='ui secondary button'>Zodiac Sign</button></Link>
