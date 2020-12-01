@@ -3,7 +3,7 @@ import '../Styles/HomePage.css'
 import { Link } from 'react-router-dom'
 import Nav from './Nav'
 
-const HomePage = (props) => {
+const HomePage = props => {
     if (props.birthday) return (
         <div>
              <br></br>
