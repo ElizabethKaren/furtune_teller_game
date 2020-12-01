@@ -37,7 +37,7 @@ export class App extends Component{
     this.createYearArray()
   }
 
-  findChineseZodiac = (year) => {
+  findChineseZodiac = year => {
     let description = ''
     let avoid = []
     let bestMatch = []
@@ -134,7 +134,7 @@ export class App extends Component{
     this.setState({ animal: animal, picture: picture, bestMatch: bestMatch, avoid: avoid, description: description })
   }
 
-  loadSign = (sign) => {
+  loadSign = sign => {
     let furtune = ''
     switch(sign){
       case 'Aries':
