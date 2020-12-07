@@ -2,6 +2,7 @@ import React from 'react'
 import '../Styles/HomePage.css'
 import { Link } from 'react-router-dom'
 import Nav from './Nav'
+import Image from './Image'
 
 const HomePage = props => {
     if (props.birthday) return (
@@ -9,7 +10,8 @@ const HomePage = props => {
              <br></br>
             <br></br>
             <Nav sign={props.sign} birthday={props.birthday} />
-            <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link>
+            <Link to='/'><Image /></Link>
+            {/* <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link> */}
             <div className='centered'>
             <Link to='/' onClick={props.resetBday}><div id='location-back' className='back'><strong>X</strong></div></Link>
                 <div className='ui black label'>
@@ -29,7 +31,8 @@ const HomePage = props => {
             <br></br>
             <br></br>
             <Nav sign={props.sign} birthday={props.birthday} />
-            <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link>
+            <Link to='/'><Image /></Link>
+            {/* <Link to='/'><img className='ui centered large image' src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='fortune teller' /></Link> */}
             <div className='centered'>
             <Link to='/'><div id='location-back' className='back'><strong>X</strong></div></Link>
                 <div className='ui form'>

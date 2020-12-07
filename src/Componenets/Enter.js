@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../Styles/Enter.css'
+import Image from './Image'
 
 const Enter = props =>{
   return (
@@ -8,7 +9,7 @@ const Enter = props =>{
         <br></br>
         <br></br>
         <br></br>
-        <img src="https://i.pinimg.com/564x/38/5a/6e/385a6e0dd46e647453b29dfc4cd5c493.jpg" alt='zoltar'/>
+       <Image /> 
           {/* <img src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='psychic' /> */}
           <br></br>
           <div className='buttons'>
