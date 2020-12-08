@@ -8,11 +8,11 @@ const Animal = props => {
         <div className='backGroundChange'>
             <div id='chinesecenter'>
                 <Link to='/birthday'><div id='location-back' className='back'><strong>X</strong></div></Link>
-                <img className='ui medium image' src={props.picture} alt={props.animal} /> 
-                <br></br><br></br>
+                <img src={props.picture} alt={props.animal}  height="290" width="190"/> 
+                <br></br>
                 <div className='ui dark grey label'>
-                    <h2>Year of the {props.animal}</h2>
-                    <h3>{props.description}</h3>
+                    <h3>Year of the {props.animal}</h3>
+                    <h4>{props.description}</h4>
                     <h4>Best Matches: {props.bestMatch.map(match => match + ', ' )}</h4>
                     <h4>Better to Avoid: {props.avoid.map(match => match + ', ' )}</h4>
                 </div>
