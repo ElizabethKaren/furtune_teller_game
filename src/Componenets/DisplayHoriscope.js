@@ -12,19 +12,19 @@ const DisplayHoriscope = props => {
         </div>
     ) 
     return (
-        <div style={{ overflow: 'scroll', height: '100vh', backgroundColor: 'lightgrey' }}>
+        <div>
         <br></br>
         <br></br>
             <Nav sign={props.sign} birthday={props.birthday} />
         <br></br>
         <br></br>
         <div id='centered' className='ui grid'>
-        <img src={props.pic} alt='sign' width='480' height='300' /> 
+        <img src={props.pic} alt='sign' width='480' height='330' /> 
         <Link to='/birthday'><div id='out-locaiton' className='back'><strong>X</strong></div></Link>
             <div className="twelve wide stretched column">
                 <div className='"ui segment"'>
                 <div className='ui black label'>
-                    <h3><strong>{props.furtune}</strong></h3>
+                    <h4><strong>{props.furtune}</strong></h4>
                 </div>
                 </div>
             </div>
