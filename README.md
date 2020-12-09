@@ -5,9 +5,4 @@
 
 <h4>Select Palm reading if would like a Palm Reading, Zoltar will ask to see your Palm and in seven seconds or less he will tell you your fortune.</h4>
 
-<img src='./virgo.png' alt='virgo' />
-
 <h4>Users also have the option to enter thier birthday for a Western or Chinese Zodaic reading.</h4>
-
-<img src='./dragon.png' alt='dragon' />
-
