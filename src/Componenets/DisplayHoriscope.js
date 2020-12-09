@@ -2,7 +2,6 @@ import React from 'react'
 import '../Styles/DisplayHoriscope.css'
 import Nav from './Nav'
 import { Link } from 'react-router-dom'
-import Image from './Image'
 
 const DisplayHoriscope = props => {
     console.log(props.sign)
@@ -20,6 +19,7 @@ const DisplayHoriscope = props => {
         <br></br>
         <br></br>
         <div id='centered' className='ui grid'>
+        <img src={props.pic} alt='sign' width='480' height='300' /> 
         <Link to='/birthday'><div id='out-locaiton' className='back'><strong>X</strong></div></Link>
             <div className="twelve wide stretched column">
                 <div className='"ui segment"'>
