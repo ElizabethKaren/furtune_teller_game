@@ -1,5 +1,5 @@
 <h2>Whats Your Fortune?</h2>
-<img src='https://i0.wp.com/cdn.makezine.com/uploads/2012/08/zoltar.jpg?resize=400%2C599' alt='pic'/>
+<a href='https://psychicreading.netlify.app/'><img src='https://i0.wp.com/cdn.makezine.com/uploads/2012/08/zoltar.jpg?resize=400%2C599' alt='pic'/></a>
 
 <h4>This Game is modeled after a 1980's style Carnival Machine!</h4>
 
