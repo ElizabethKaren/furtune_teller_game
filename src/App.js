@@ -145,7 +145,7 @@ export class App extends Component{
         break;
       case 'Taurus':
         furtune = "Taurus is a fixed earth sign represented by the bull.  Signs situated in the middle of a season tend to be set in their ways.  Their behavior and thought patterns tend to remain more or less consistent over long periods of time.  There is a focus on material comforts and security.  They tend to identify quite strongly with their belongings and are down to earth in the way they process events and information.  Taurus is ruled by the planet Venus.  This makes them quite romantic, and generally interested in beauty and sensual gratification."
-        pic = 'https://www.thesun.co.uk/wp-content/uploads/2020/11/NINTCHDBPICT000620738317-5.jpg'
+        pic = 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F14%2F2020%2F04%2F03%2F040220-taurus-astrology-lead.jpg&q=85'
         break;
       case 'Gemini':
         furtune = 'Gemini is a mutable air sign represented by the twins.  It comes at the end of the season, which makes its nature very changeable.  As an air sign (ruled by the planet mercury) they are very interested in communication and travel.  They need to socialize and bounce ideas off of different sorts of people.  They can make very pleasant company, especially in a group setting.  Being of the air element makes them somewhat unpredictable as lovers.  Changes of mind/heart are frequent.'
