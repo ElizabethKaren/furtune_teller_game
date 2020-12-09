@@ -12,6 +12,26 @@
   width: 20px;
   text-align: center;
 }
+button{
+  transition-duration: 0.4s;
+  background-color: white;
+  width: 90px;
+  height: 48px;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.divider{
+  width: 10px;
+  height:auto;
+  display:inline-block;
+}
+
+button:hover {
+  background-color: rgb(150, 13, 150); 
+  color: white;
+}
 
 #centered{
   display: flex;

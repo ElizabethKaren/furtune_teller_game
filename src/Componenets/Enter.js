@@ -13,8 +13,9 @@ const Enter = props =>{
           {/* <img src='https://i.pinimg.com/564x/d8/89/4a/d8894afcc217255f7e08c59d9ef603f5.jpg' alt='psychic' /> */}
           <br></br>
           <div className='buttons'>
-            <Link to='/birthday'><button className='ui inverted button'><strong>Zodiac Sign</strong></button></Link>
-            <Link to='/palmreading' onClick={props.displayReading}><button className='ui inverted button'>Palm Reading</button></Link>
+            <Link to='/birthday'><button>Zodiac Sign</button></Link>
+            <div className="divider"/>
+            <Link to='/palmreading' onClick={props.displayReading}><button>Palm Reading</button></Link>
           </div>
       </div>
   )

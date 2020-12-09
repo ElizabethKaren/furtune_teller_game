@@ -20,8 +20,9 @@ const HomePage = props => {
             </div>
             <br></br>
                     <div>
-                        <Link to='/horiscope' onClick={props.submitBirthday}><button className='ui inverted button'><strong>Western Zodiac</strong></button></Link>
-                        <Link to='/animal' onClick={props.submitBirthday}><button className='ui inverted button'><strong>Chinese Zodiac</strong></button></Link>
+                        <Link to='/horiscope' onClick={props.submitBirthday}><button>Western Zodiac</button></Link>
+                        <div className="divider"/>
+                        <Link to='/animal' onClick={props.submitBirthday}><button>Chinese Zodiac</button></Link>
                     </div>
             <br></br>
         </div>
@@ -69,8 +70,9 @@ const HomePage = props => {
                     </div>
                     <br></br>
                     <div>
-                        <Link to='/horiscope' onClick={props.submitBirthday}><button className='ui inverted button'>Western Zodiac</button></Link>
-                        <Link to='/animal' onClick={props.submitBirthday}><button className='ui inverted button'>Chinese Zodiac</button></Link>
+                        <Link to='/horiscope' onClick={props.submitBirthday}><button>Western Zodiac</button></Link>
+                        <div className="divider"/>
+                        <Link to='/animal' onClick={props.submitBirthday}><button>Chinese Zodiac</button></Link>
                     </div>
                     <br></br>
                 </div>
