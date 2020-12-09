@@ -3,7 +3,7 @@ import '../Styles/Animal.css'
 import { Link } from 'react-router-dom'
 
 const Animal = props => {
-    if (!props.animal) return <div className='noSign'><div className='ui black label'> No Sign</div></div>
+    if (!props.animal) return <div className='noSign'><Link to='/birthday'><div id='location-back' className='back'><strong>X</strong></div></Link><div className='ui black label'> No Sign</div></div>
     return (
         <div className='backGroundChange'>
             <div id='chinesecenter'>
