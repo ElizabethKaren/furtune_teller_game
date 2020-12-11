@@ -9,7 +9,8 @@ const PalmReading = props =>{
             <Link to='/' onClick={props.clearReading}><div className='back'><strong>X</strong></div></Link>
             <div className='ui black label'><h3>{props.fortune}</h3></div>
         </div>
-    </div>)
+    </div>
+    )
     return (
         <div>
             <div className='palm-message'>
