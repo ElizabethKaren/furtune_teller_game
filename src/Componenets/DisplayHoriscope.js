@@ -19,7 +19,7 @@ const DisplayHoriscope = props => {
         <br></br>
         <br></br>
         <div id='centered' className='ui grid'>
-        <img src={props.pic} alt='sign' width='480' height='330' /> 
+        <img className='ui medium image' src={props.pic} alt='sign'/> 
         <Link to='/birthday'><div id='out-locaiton' className='back'><strong>X</strong></div></Link>
             <div className="twelve wide stretched column">
                 <div className='"ui segment"'>
