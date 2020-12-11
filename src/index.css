@@ -1,23 +1,15 @@
 body {
-  /* margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
   background-image: url('https://i.pinimg.com/564x/96/82/c5/9682c5d382b98d67183323aa4b52e462.jpg');
   height: 100%;
   background-color: black;
 }
 
 code {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; */
     font-family: 'Creepster', cursive;
-    /* background-image: url('https://i.pinimg.com/564x/96/82/c5/9682c5d382b98d67183323aa4b52e462.jpg'); */
 }
 
 #root{
-  /* background-image: url('https://i.pinimg.com/564x/96/82/c5/9682c5d382b98d67183323aa4b52e462.jpg'); */
   background-image: url('https://i.pinimg.com/564x/3e/88/3d/3e883ddca236763a7559c41fcfcbf1ac.jpg');
-  /* background-color: rgb(117, 109, 109); */
   height: 100%;
   background-attachment: fixed;
   background-color: black;
