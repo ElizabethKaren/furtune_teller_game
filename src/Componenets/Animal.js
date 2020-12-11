@@ -13,7 +13,7 @@ const Animal = props => {
         <div>
             <div id='chinesecenter'>
                 <Link to='/birthday'><div id='location-back' className='back'><strong>X</strong></div></Link>
-                <img src={props.picture} alt={props.animal}  height="290" width="190"/> 
+                <img className='ui medium image' src={props.picture} alt={props.animal} /> 
                 <br></br>
                 <div className='ui dark grey label'>
                     <h3>Year of the {props.animal}</h3>
