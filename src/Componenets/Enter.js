@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../Styles/Enter.css'
 import Image from './Image'
 
-const Enter = props =>{
+const Enter = props => {
   return (
       <div className='centered'>
         <br></br>

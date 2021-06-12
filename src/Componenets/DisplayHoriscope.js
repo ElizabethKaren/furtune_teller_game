@@ -4,7 +4,6 @@ import Nav from './Nav'
 import { Link } from 'react-router-dom'
 
 const DisplayHoriscope = props => {
-    console.log(props.sign)
     if (props.sign === '' || props.sign === null ) return (
         <div style={{ overflow: 'scroll', height: '100vh', backgroundColor: 'lightgrey' }}> 
             <Link to='/birthday'><div id='out-locaiton' className='back'><strong>X</strong></div></Link>

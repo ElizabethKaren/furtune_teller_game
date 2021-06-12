@@ -2,7 +2,7 @@ import React from 'react'
 import '../Styles/PalmReading.css'
 import { Link } from 'react-router-dom'
 
-const PalmReading = props =>{
+const PalmReading = props => {
     if (props.displayReading) return (
     <div>
         <div className='palm-message'>

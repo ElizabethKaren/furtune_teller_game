@@ -132,7 +132,7 @@ export class App extends Component{
       default:
         animal = ''
   }
-    this.setState({ animal: animal, picture: picture, bestMatch: bestMatch, avoid: avoid, description: description })
+    this.setState({ animal, picture, bestMatch, avoid, description })
   }
 
   loadSign = sign => {
@@ -191,32 +191,28 @@ export class App extends Component{
         furtune = null 
         pic = null 
     }
-    this.setState({ furtune: furtune, pic: pic })
+    this.setState({ furtune, pic })
   }
 
 
   createYearArray = () => {
-    const array = [2020]
-    let count = 0
-    while (count < 100){
-      let newYear = array[count] - 1
+    const array = [new Date().getFullYear()]
+    for (let count = 0; count < 100; count ++){
+      const newYear = array[count] - 1
       array.push(newYear)
-      count ++;
     }
     this.setState({years: array})
   }
 
   submitBirthday = () => {
-    const month = this.state.month
-    const day = parseInt(this.state.day)
-    const year = parseInt(this.state.year)
-    this.setState({ birthday: {
-      month: month,
-      day: day,
-      year: year
-    } })
-    this.findSign(month, day)
-    this.findChineseZodiac(year)
+    const birthday = {
+      month: this.state.month,
+      day: parseInt(this.state.day),
+      year: parseInt(this.state.year)
+    }
+    this.setState({ birthday: birthday })
+    this.findSign(birthday.month,birthday.day)
+    this.findChineseZodiac(birthday.year)
   }
 
   findSign = (month, day) => {
@@ -310,12 +306,10 @@ export class App extends Component{
         sign = null 
     }
     this.loadSign(sign)
-    this.setState({ sign: sign })
+    this.setState({ sign })
   }
 
-  displayReading = () => setTimeout( () => this.setState({ displayReading: true }) , 6000)
-
-  clearReading = () => this.setState({ displayReading: false })
+  displayReading = () => setTimeout( () => this.setState({ displayReading: !this.state.displayReading }) , 4 * 1000)
 
   render(){
     const fortune = this.state.palmreading[Math.floor(Math.random() * this.state.palmreading.length)]
@@ -323,7 +317,7 @@ export class App extends Component{
     <div className="App">
       <Switch>
         <Route path='/animal' render={()=> <Animal description={this.state.description} avoid={this.state.avoid} bestMatch={this.state.bestMatch} picture={this.state.picture} animal={this.state.animal} />}></Route>
-        <Route path='/palmreading' render={()=> <PalmReading clearReading={this.clearReading} displayReading={this.state.displayReading} fortune={fortune}/> }></Route>
+        <Route path='/palmreading' render={()=> <PalmReading clearReading={this.displayReading} displayReading={this.state.displayReading} fortune={fortune}/> }></Route>
         <Route path='/horiscope' render={()=> <DisplayHoriscope pic={this.state.pic} birthday={this.state.birthday} sign={this.state.sign} furtune={this.state.furtune}/>}></Route>
         <Route path='/birthday' render={()=> <HomePage resetBday={this.resetBday} handleOnChange={this.handleOnChange} birthday={this.state.birthday} years={this.state.years} day={this.state.day} month={this.state.month} year={this.state.year} submitBirthday={this.submitBirthday}/> } />
         <Route path='/' render={()=> <Enter displayReading={this.displayReading}/> }></Route>
